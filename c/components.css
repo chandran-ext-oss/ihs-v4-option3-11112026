@@ -2336,3 +2336,216 @@ html body #formats.md2f .md2-t[aria-selected=true] b{color:#fff!important}
 html body #formats.md2f .md2-t[aria-selected=true] small{background:none!important;color:rgba(255,255,255,.78)!important}
 html body #formats.md2f .md2-t em.md2-sub,html body #formats.md2f .md2-rd{display:none!important}
 @media(max-width:860px){html body #formats.md2f .md2-tabs{flex-wrap:nowrap!important;justify-content:flex-start!important;overflow-x:auto!important;margin-inline:-16px!important;padding:2px 16px 6px!important;scrollbar-width:none}html body #formats.md2f .md2-tabs::-webkit-scrollbar{display:none}html body #formats.md2f .md2-t{flex:none!important;padding:5px 18px 5px 5px!important}html body #formats.md2f .md2-ic{width:38px!important;height:38px!important}}
+/* v175 home refinements */
+.hero .hbg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.5));pointer-events:none}
+html body #stories .hd{display:grid!important;grid-template-columns:1fr!important;text-align:center!important;justify-items:center!important}
+html body #stories .hd p,html body #tour .head p.lede{display:none!important}
+html body #tour .head{text-align:center!important;justify-items:center!important;margin-inline:auto!important;max-width:none!important}
+html body #tour .head h2{margin-inline:auto!important}
+html body #needs .oth{margin-top:48px!important;padding-top:0!important}
+html body main section#stories div.hd,html body section#tour div.head{display:grid!important;grid-template-columns:minmax(0,1fr)!important;justify-items:center!important;text-align:center!important}
+html body main section#stories div.hd h2,html body section#tour div.head h2{text-align:center!important;margin-inline:auto!important;max-width:24ch!important}
+html body section#stories#stories div.hd.hd,html body section#tour#tour div.head.head{display:grid!important;grid-template-columns:minmax(0,1fr)!important;justify-items:center!important;text-align:center!important}
+html body section#stories#stories div.hd.hd h2,html body section#tour#tour div.head.head h2{text-align:center!important;margin-inline:auto!important;max-width:24ch!important}
+/* v176 consistent section rhythm, centred hero, one-line headings */
+html:root{--sec-y:clamp(56px,5vw,80px)!important}
+html body main>section#programs,html body section#enquire{padding-block:var(--sec-y)!important}
+html body #systems .p4h{align-items:start!important}
+html body #form .fm{align-items:start!important}
+html body #notsure .ns .t{justify-content:flex-start!important;padding-top:var(--sec-y)!important;padding-bottom:var(--sec-y)!important}
+html body section#enquire .fm,html body section#enquire>.w>*{align-items:start!important}
+/* hero copy centred in frame */
+html body .hero{display:grid!important;place-items:center!important;align-items:center!important}
+html body .hero>.w:not(.phcr){display:grid;place-items:center;width:min(1200px,100% - 32px);margin-inline:auto;padding-block:clamp(56px,8vw,96px)!important}
+html body .hero .copy{margin-inline:auto!important;text-align:center!important;justify-items:center!important;max-width:min(860px,100%)!important}
+html body .hero .copy>*{margin-inline:auto!important}
+html body .hero h1{max-width:18ch!important;margin-inline:auto!important;text-align:center!important}
+html body .hero p.sub{text-align:center!important}
+html body .hero::before{background:linear-gradient(0deg,rgba(0,0,0,.25),rgba(0,0,0,.25))!important}
+/* one-line section headings (wrap only when the screen is too narrow) */
+html body section#stories#stories div.hd.hd h2,html body section#tour#tour div.head.head h2{max-width:none!important}
+html body section#tour#tour div.head.head h2 em,html body section#tour#tour div.head.head h2 span{display:inline!important}
+@media(min-width:1100px){html body section#stories#stories div.hd.hd h2,html body section#tour#tour div.head.head h2{white-space:nowrap!important}}
+html body .hero>.w.phcr{justify-content:center!important;text-align:center}
+html body main>section#programs.g12.g12e,html body main>section#programs.g12.g12d{padding-block:var(--sec-y)!important}
+/* v176 side sheet: modern stepper, no eyebrows, enrol options as boxes */
+#ss .ss-stp{display:flex;align-items:center;gap:10px;list-style:none;margin:0;padding:0;counter-reset:none}
+#ss .ss-stp li{display:flex;align-items:center;gap:8px;font:500 13px/1 var(--f-sans);color:var(--n-600);white-space:nowrap}
+#ss .ss-stp li+li::before{content:"";width:28px;height:2px;border-radius:2px;background:var(--n-200);margin-right:2px}
+#ss .ss-stp li.done+li::before{background:var(--brand-800)}
+#ss .ss-stp i{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font:600 12px/1 var(--f-sans);font-style:normal;background:var(--n-0);border:1.5px solid var(--n-200);color:var(--n-600);box-sizing:border-box}
+#ss .ss-stp li.on{color:var(--n-900);font-weight:600}
+#ss .ss-stp li.on i{background:var(--brand-800);border-color:var(--brand-800);color:#fff;box-shadow:0 0 0 4px rgba(30,64,48,.12)}
+#ss .ss-stp li.done i{background:var(--brand-100,#E3EDDC);border-color:var(--brand-800);color:var(--brand-800)}
+#ssC .ss-top{gap:12px!important}
+#ssE .ss-stp{margin-bottom:4px}
+#ssE:has(.ss-back[hidden]) .ss-stp{display:none}
+#ssE .ss-eb{display:none!important}
+/* enrol options as rectangle boxes */
+#ssC .ss-sec .ss-modes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+#ssC .ss-modes li{display:grid;align-content:start;gap:8px;padding:16px 14px;background:var(--n-0);border:1px solid var(--n-200);border-radius:16px;min-width:0}
+#ssC .ss-modes i{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:var(--n-100);color:var(--brand-800);margin:0 0 4px}
+#ssC .ss-modes i svg{width:20px;height:20px}
+#ssC .ss-modes b{font:600 16px/1.25 var(--f-sans);color:var(--n-900)}
+#ssC .ss-modes .ss-dur{justify-self:start;margin:0;padding:5px 9px;border-radius:8px;background:var(--brand-800);color:#fff;font:600 12.5px/1.3 var(--f-sans)}
+#ssC .ss-modes small{font:400 13px/1.45 var(--f-sans);color:var(--n-600)}
+@media(max-width:479px){#ssC .ss-sec .ss-modes{grid-template-columns:1fr}#ssC .ss-modes li{grid-template-columns:40px minmax(0,1fr);column-gap:12px;align-items:center}#ssC .ss-modes i{grid-row:1/4;margin:0}}
+/* v177 modes flow: section CTAs + modes inside side sheet */
+.sec-cta{display:flex;justify-content:center;margin-top:clamp(28px,4vw,48px)}
+#ssC .ms-b{gap:16px!important;padding-bottom:0}
+#ssC .ms-sub{margin:0;padding:10px 14px;border-radius:12px;background:var(--n-100);font:400 14px/1.4 var(--f-sans);color:var(--n-600)}
+#ssC .ms-sub b{color:var(--n-900);font-weight:600}
+#ssC .ms-sub[hidden]{display:none}
+html body #ss #formats.md2f{padding:0!important;background:none!important;margin:0}
+html body #ss #formats.md2f .md2-tabs{justify-content:flex-start!important;flex-wrap:wrap!important;overflow:visible!important;margin:0 0 14px!important;padding:0!important}
+html body #ss #formats.md2f .md2-t{padding:5px 16px 5px 5px!important}
+html body #ss #formats.md2f .md2-ic{width:36px!important;height:36px!important}
+html body #ss #formats.md2f .md2-t b{font-size:15px!important}
+html body #ss #formats.md2f .md3{grid-template-columns:1fr!important;padding:0!important;border:0!important;background:none!important;gap:14px!important}
+html body #ss #formats.md2f .md3-im{height:170px!important;min-height:0!important}
+html body #ss #formats.md2f .md3-im .md3-cap{transform:scale(.8);transform-origin:left bottom}
+html body #ss #formats.md2f .md3-info{grid-template-columns:1fr!important}
+html body #ss #formats.md2f .md3-cta{position:sticky;bottom:0;z-index:2;margin:6px calc(-1*clamp(22px,4vw,32px)) 0!important;padding:14px clamp(22px,4vw,32px) calc(14px + env(safe-area-inset-bottom,0px))!important;background:var(--n-50);border-top:1px solid var(--n-200)}
+html body #ss #formats.md2f .md3-cta::before{display:none}
+html body #ss #formats.md2f .md3-cta .btn{width:100%!important;white-space:normal}
+#ssE input[readonly]{background:var(--n-100)!important;color:var(--n-900);cursor:default}
+html body #ss #formats.md2f{margin:0!important;width:auto!important;max-width:none!important}
+html body #ss #formats.md2f .md3,html body #ss #formats.md2f .md3-info{overflow:visible!important}
+/* v178 hero: left aligned, vertically centred */
+html body .hero .copy{margin-inline:0!important;text-align:left!important;justify-items:start!important;max-width:min(720px,100%)!important}
+html body .hero .copy>*{margin-inline:0!important}
+html body .hero h1,html body .hero p.sub{text-align:left!important;margin-inline:0!important}
+html body .hero>.w:not(.phcr){place-items:center start!important;justify-items:start!important}
+html body .hero>.w.phcr{justify-content:flex-start!important;text-align:left}
+/* side sheet: fixed width, no images, one icon weight, stepper fixed at top */
+#ss .ss-p{width:min(520px,100vw)!important;max-width:100vw!important}
+#ssC .ss-head .ss-im,html body #ss #formats.md2f .md3-im{display:none!important}
+#ss svg{stroke-width:1.75!important}
+#ss #ssE .ss-stp{position:sticky;top:76px;z-index:3;margin:-8px calc(-1*clamp(22px,4vw,36px)) 4px;padding:12px clamp(22px,4vw,36px);background:var(--n-50);border-bottom:1px solid var(--n-200)}
+#ss #ssE:has(.ss-back[hidden]) .ss-stp{display:none}
+
+/* v179 sheet success state */
+#ss #ssE:has(form.is-done)>:is(.ss-stp,h3,p,.ss-back){display:none!important}
+#ss #ssE:has(form.is-done){padding-top:76px}
+#ss form.is-done .fe-done{padding-top:24px}
+form.is-done>:not(.fe-done){display:none!important}
+/* v180 hero gradient: black 100% at left -> 0 at centre */
+html body .hero::before{background:none!important}
+html body .hero .hbg::after{background:linear-gradient(90deg,rgba(0,0,0,1) 0%,rgba(0,0,0,0) 50%)!important}
+/* v180 side sheet follows the Help-me-choose layout: step label + segmented progress, grouped panels, footer actions */
+#ss .ss-pg{display:grid;gap:10px;padding-right:64px}
+#ss .ss-pgl{font:600 12px/1 var(--f-sans);letter-spacing:.12em;text-transform:uppercase;color:var(--n-600)}
+#ss .ss-pgl b{font-weight:700;color:var(--brand-800)}
+#ss .ss-bars{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;list-style:none;margin:0;padding:0}
+#ss .ss-bars li{height:4px;border-radius:4px;background:var(--n-100)}
+#ss .ss-bars li.cur,#ss .ss-bars li.done{background:var(--brand-800)}
+#ssC .ss-top{padding-top:22px!important;gap:16px!important;padding-right:clamp(22px,4vw,32px)!important}
+html body #ssC .ss-top h3,html body #ssE>h3{font-size:clamp(28px,2.4vw,34px)!important}
+#ssC .ss-v2{gap:16px!important;padding-top:18px!important}
+#ssC .ss-sec{background:var(--n-0);border:1px solid var(--n-200);border-radius:22px;padding:20px 22px}
+#ssC .ss-sec h4{margin:0 0 14px!important;font:700 11.5px/1.2 var(--f-sans)!important;letter-spacing:.14em!important;text-transform:uppercase!important;color:var(--n-600)!important}
+#ssC .ss-ben li{background:var(--n-50);border:0;padding:12px 14px}
+#ssC .ss-sec .ss-who{background:none;padding:0!important}
+#ssC .ss-modes li{background:var(--n-50);border:0}
+#ssC .ss-v2 .ss-acts{display:flex;justify-content:flex-end;margin-top:0!important}
+#ssC .ss-acts .btn{width:auto!important}
+/* enquiry view */
+#ss #ssE .ss-pg{position:sticky;top:0;z-index:3;margin:0 calc(-1*clamp(22px,4vw,36px)) 6px;padding:22px 76px 16px clamp(22px,4vw,36px);background:var(--n-50);border-bottom:1px solid var(--n-200)}
+#ss #ssE:has(.ss-back[hidden]) .ss-pg{display:none}
+#ss #ssE{padding-top:0!important}
+#ss #ssE:has(.ss-back[hidden]){padding-top:76px!important}
+#ss #ssE .ss-ft{position:sticky;bottom:0;z-index:2;display:flex;align-items:center;justify-content:flex-end;gap:12px;margin:8px calc(-1*clamp(22px,4vw,36px)) 0;padding:14px clamp(22px,4vw,36px) calc(14px + env(safe-area-inset-bottom,0px));background:var(--n-50);border-top:1px solid var(--n-200)}
+#ss #ssE .ss-ft .ss-back{position:static!important;width:auto!important;height:48px!important;margin:0 auto 0 0!important;padding:0 22px!important;border:1px solid var(--n-200)!important;border-radius:999px;background:var(--n-0)!important;font:600 15px/1 var(--f-sans)!important}
+#ss #ssE .ss-ft .ss-back[hidden]{display:none!important}
+#ss #ssE .ss-ft .btn{width:auto!important}
+/* v180 one section = one viewport frame (desktop + tablet landscape) */
+@media(min-width:861px) and (min-height:600px){
+ html body main>section:is(#stories,#doctors,#form,#ins,#faq,#systems,#intro,#notsure){min-height:calc(100svh - var(--hh,72px))!important;display:flex!important;flex-direction:column!important;justify-content:center!important;box-sizing:border-box}
+ html body main>section:is(#stories,#doctors,#form,#ins,#faq,#systems,#intro)>.w{width:min(1200px,100% - 32px)}
+ /* stories: video + thumbs sized to the frame */
+ html body #stories .vid{height:clamp(300px,calc(100svh - var(--hh,72px) - 2*var(--sec-y) - 150px),560px)!important;min-height:0!important}
+ html body #stories .th{max-height:clamp(300px,calc(100svh - var(--hh,72px) - 2*var(--sec-y) - 150px),560px);overflow:auto;scrollbar-width:none}
+ html body #stories .hd{margin-bottom:28px!important}
+ /* doctors */
+ html body #doctors .dc img{aspect-ratio:auto!important;height:clamp(180px,calc(100svh - var(--hh,72px) - 2*var(--sec-y) - 380px),340px)!important;width:100%;object-fit:cover}
+ html body #doctors .hd{margin-bottom:28px!important}
+ /* insights */
+ html body #ins .ic img,html body #ins img{max-height:clamp(140px,calc(100svh - var(--hh,72px) - 2*var(--sec-y) - 420px),240px);object-fit:cover}
+ html body #ins .hd{margin-bottom:28px!important}
+ /* form: drop decorative strip, tighten */
+ html body #form .strip{display:none!important}
+ html body #form form textarea{min-height:72px!important}
+ html body #form form{gap:12px!important}
+ /* faq */
+ html body #faq .hd{margin-bottom:24px!important}
+}
+@media(min-width:861px) and (min-height:600px){
+ html body main>section#stories#stories .stories .vid{height:clamp(300px,calc(100svh - var(--hh,72px) - 2*var(--sec-y) - 130px),560px)!important}
+ html body main>section#stories#stories .stories .th{height:clamp(300px,calc(100svh - var(--hh,72px) - 2*var(--sec-y) - 130px),560px)!important;max-height:none}
+ html body main>section#stories#stories .stories{height:auto!important}
+ html body main>section:is(#stories,#doctors,#ins,#faq)#x,html body main>section#doctors .hd.hd,html body main>section#ins .hd.hd,html body main>section#stories .hd.hd{margin-bottom:28px!important}
+ html body main>section#ins .cn,html body main>section#doctors .cn{margin-top:16px!important;padding-top:14px!important}
+ html body main>section#faq .fql>li>button{padding-block:16px!important}
+ html body main>section#faq .fql{margin-top:12px!important}
+}
+@media(min-width:861px) and (min-height:600px){
+ html body main>section#doctors .dc img{height:clamp(170px,calc(100svh - var(--hh,72px) - 2*var(--sec-y) - 430px),300px)!important}
+ html body main>section#faq .fql li button,html body main>section#faq .fql li>[role=button]{padding-block:12px!important;min-height:52px}
+}
+/* v180 fit sections to the viewport */
+html:root{--sec-y:clamp(40px,min(5vw,7.5vh),80px)!important}
+@media(min-width:861px) and (max-height:820px){
+ html body main section :is(.hd,.head,.md2-hd){margin-bottom:28px!important}
+ .sec-cta{margin-top:20px}
+}
+@media(min-width:861px) and (max-height:820px){
+ html body #faq .fql>li>button{padding-block:8px!important;min-height:48px!important}
+ html body main section .cn{margin-top:10px!important;padding-top:10px!important}
+}
+@media(min-width:861px) and (max-height:820px){
+ html body main section#faq#faq .fql>li>button{padding-block:8px!important;min-height:48px!important}
+ html body main section:is(#doctors,#ins)#doctors .cn,html body main section#ins#ins .cn,html body main section#doctors#doctors .cn{margin-top:8px!important;padding-top:8px!important}
+}
+/* v180 "Not sure" flow: same type scale + width as the other side sheets */
+html body #hm .box{width:min(520px,100vw)!important;max-width:100vw!important}
+html body #hm .ttl{font:400 clamp(30px,2.6vw,36px)/1.08 var(--f-serif)!important;text-align:left!important;letter-spacing:-.01em}
+html body #hm :is(.lb,.lab,.rh,.q>b){font:600 12px/1.2 var(--f-sans)!important;letter-spacing:.14em!important;text-transform:uppercase;color:var(--brand-600)!important}
+html body #hm .pgl,html body #hm .pgl b{font:600 12px/1.2 var(--f-sans)!important;letter-spacing:.1em}
+html body #hm :is(.mode .mt2 b,.dq b,.rec b,.ccard b,.pan h6){font:600 16px/1.3 var(--f-sans)!important}
+html body #hm :is(.mode .mt2 span,.rec .w,.ccard .why,.pan .sub,.note,.pp,.sfa p){font-size:14px!important;line-height:1.5!important}
+html body #hm .hpill{font:500 15px/1.3 var(--f-sans)!important}
+html body #hm .hpill small{font:500 13px/1.2 var(--f-sans)!important}
+html body #hm .mode em,html body #hm .rec .bd{font:700 11px/1 var(--f-sans)!important;letter-spacing:.08em}
+html body #hm :is(.go,.prev){height:52px!important;font:600 15px/1 var(--f-sans)!important}
+html body #hm .inp{font:400 15px/1 var(--f-sans)!important}
+html body #hm .ttl{padding-left:0!important;padding-right:0!important}
+@media(max-width:600px){html body #hm .mode:has(em){display:grid!important;grid-template-columns:20px minmax(0,1fr);column-gap:14px;align-items:start}
+ html body #hm .mode:has(em) .tk{grid-row:1/3;grid-column:1}
+ html body #hm .mode:has(em) em{position:static!important;grid-row:1;grid-column:2;justify-self:start;margin-bottom:8px}
+ html body #hm .mode:has(em) .mt2{grid-row:2;grid-column:2}}
+@media(max-width:600px){html body #hm .mode:has(em){row-gap:6px!important}html body #hm .mode:has(em) em{margin-bottom:0!important}html body #hm .mode:has(em) .mt2{margin-top:0!important}}
+/* v181 not-sure text: vertically centred, left aligned */
+html body #notsure .ns .t{justify-content:center!important;align-items:flex-start!important;text-align:left!important}
+@media(min-width:861px){html body main>section#stories#stories .stories .vid{aspect-ratio:auto!important;width:100%!important;justify-self:stretch!important}}
+/* v183 sheet: only the stepper is fixed; title scrolls with the info */
+#ssC .ss-head h3{margin:0;font:400 clamp(30px,2.6vw,36px)/1.06 var(--f-serif)!important;color:var(--n-900)}
+#ssC .ss-top{padding-bottom:16px!important}
+/* v184 intro hugs its content */
+html body main>section#intro{min-height:0!important;height:auto!important}
+/* v185 enquiry view: back icon, stepper and close share one fixed bar */
+#ss #ssE .ss-etop{position:sticky;top:0;z-index:4;display:flex;align-items:center;gap:14px;height:76px;margin:0 calc(-1*clamp(22px,4vw,36px)) 8px;padding:0 76px 0 clamp(22px,4vw,36px);background:var(--n-50);border-bottom:1px solid var(--n-200);box-sizing:border-box}
+#ss #ssE .ss-etop .ss-back{position:static!important;all:unset;box-sizing:border-box;flex:none;width:44px;height:44px;border-radius:50%;display:grid!important;place-items:center;border:1px solid var(--n-200);background:var(--n-0);color:var(--n-900);cursor:pointer;margin:0!important;padding:0!important}
+#ss #ssE .ss-etop .ss-back:hover{border-color:var(--brand-800)}
+#ss #ssE .ss-etop .ss-back:focus-visible{outline:2px solid var(--brand-600);outline-offset:2px}
+#ss #ssE .ss-etop .ss-stp{position:static!important;margin:0!important;padding:0!important;border:0!important;background:none!important}
+#ss #ssE .ss-etop:has(.ss-back[hidden]){display:none}
+/* v186 modes sheet: sticky submit + labelled close */
+#ss.ss-modes .ss-x{width:auto!important;height:44px!important;border-radius:999px!important;display:inline-flex!important;align-items:center;gap:6px;padding:0 12px 0 16px!important;font:600 14px/1 var(--f-sans);color:var(--n-900)}
+#ss.ss-modes .ss-x svg{width:18px;height:18px}
+#ss.ss-modes #ef>button[type=submit]{position:sticky;bottom:16px;z-index:3;width:100%;box-shadow:0 0 0 16px var(--n-50),0 -17px 0 0 var(--n-200)}
+#ss.ss-modes #ssE{padding-bottom:16px}
+#ss.ss-modes #ssE .ss-etop{padding-right:132px}
+/* v187 modes sheet: title + close fixed at top */
+#ss.ss-modes #ssE{padding-top:0!important}
+#ss.ss-modes #ssE>h3{position:sticky;top:0;z-index:4;display:flex;align-items:center;min-height:76px;margin:0 calc(-1*clamp(22px,4vw,36px)) 12px!important;padding:12px 140px 12px clamp(22px,4vw,36px)!important;background:var(--n-50);border-bottom:1px solid var(--n-200);box-sizing:border-box;font-size:clamp(24px,2.2vw,28px)!important}
+#ss.ss-modes #ssE:has(form.is-done)>h3{display:none!important}

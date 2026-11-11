@@ -251,8 +251,9 @@ document.querySelectorAll('form[data-enquiry]').forEach(function(f){
   var btn=f.querySelector('button[type=submit]');btn.disabled=true;btn.classList.add('is-busy');var data={};fields.forEach(function(el){data[el.id||el.name]=el.type==='checkbox'?el.checked:el.value.trim()});data.page=location.pathname;
   var name=(f.querySelector('input[type=text]')||{}).value||'';
   function done(){var box=document.createElement('div');box.className='fe-done';box.setAttribute('role','status');box.setAttribute('tabindex','-1');
-   box.innerHTML='<span class="fe-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><h3>Thank you'+(name?', '+name.replace(/[<>&"]/g,'').split(' ')[0]:'')+'.</h3><p>Our health team will reach out on WhatsApp to understand your concern and guide your next step.</p><a class="btn btn-p" href="'+MM+'" target="_blank" rel="noopener">Book a consultation now<span class="ci">→</span></a>';
-   f.replaceChildren(box);box.focus()}
+   box.innerHTML='<span class="fe-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><h3>Thank you'+(name?', '+name.replace(/[<>&"]/g,'').split(' ')[0]:'')+'.</h3><p>We have received your enquiry. Our team will get back to you shortly on WhatsApp.</p>'+(f.closest('#ss')?'<button type="button" class="btn btn-p" data-x>Close<span class="ci">→</span></button>':'<a class="btn btn-p" href="'+MM+'" target="_blank" rel="noopener">Book a consultation now<span class="ci">→</span></a>');
+   [].forEach.call(f.children,function(x){x.hidden=true});f.appendChild(box);f.classList.add('is-done');box.focus()}
+  f.ihsReset=function(){var d=f.querySelector('.fe-done');if(d)d.remove();[].forEach.call(f.children,function(x){if(!x.classList.contains('ok'))x.hidden=false});f.classList.remove('is-done');f.reset();btn.disabled=false;btn.classList.remove('is-busy');var o=f.querySelector('.ok');if(o)o.textContent=''}
   function fail(){btn.disabled=false;btn.classList.remove('is-busy');var o=f.querySelector('.ok');if(o)o.textContent='Something went wrong. Please try again, or call +91 83000 45333.'}
   var ep=f.dataset.endpoint;if(ep){fetch(ep,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}).then(function(r){r.ok?done():fail()}).catch(fail)}else{setTimeout(done,600)}
  })})})();
@@ -269,3 +270,7 @@ document.querySelectorAll('form[data-enquiry]').forEach(function(f){
  b.addEventListener('click',function(){var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;window.scrollTo({top:0,behavior:rm?'auto':'smooth'});setTimeout(function(){var h=document.querySelector('header a,header button');if(h)h.focus({preventScroll:true})},rm?0:600)});
  upd();
 })();
+
+/* reset sheet enquiry forms after the sheet closes */
+(function(){function rs(){setTimeout(function(){document.querySelectorAll('#ss form.is-done').forEach(function(f){if(f.ihsReset)f.ihsReset()})},500)}
+document.addEventListener('click',function(e){if(e.target.closest('#ss [data-x]'))rs()});document.addEventListener('keydown',function(e){if(e.key==='Escape')rs()})})();
